@@ -2,6 +2,7 @@
  
 int main()
 {
+    //int array
     int n,i;
     printf("Enter no. of elements of an array\n");
     scanf("%d",&n);
@@ -15,6 +16,11 @@ int main()
     {
         printf("%d\n",arr[i]);
     }
-    int a = sizeof(arr);
-    printf("%d",a);
+
+    //character array(string)
+    char a[20];
+    printf("Enter character array\n");
+    scanf("%s",&a);
+    printf("Your character array is:\n");
+    printf("%s",a);
 }
