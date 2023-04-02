@@ -1,0 +1,1 @@
+You would use an array of stacks.
