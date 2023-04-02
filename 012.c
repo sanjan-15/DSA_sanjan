@@ -1,9 +1,9 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #define MAX 20
 int stk[MAX];
-int top =-1;
+int top = -1;
 
 int isEmpty()
 {
@@ -38,20 +38,21 @@ void push(char oper)
 }
 void convertPostfixToInfix(char exp[])
 {
-    int i,l,j=0;
-    char a,b,op,tmp[20];
+    int i, l, j = 0;
+    char a, b, op, tmp[20];
     strrev(exp);
-    l=strlen(exp);
-    for(i=0;i<l;i++)
+    l = strlen(exp);
+    for (i = 0; i < l; i++)
     {
-       if(exp[i]=='+'||exp[i]=='-'||exp[i]=='*'||exp[i]=='/'||exp[i]=='^')
-       push(exp[i]);
-       else{
-        tmp[j++]=exp[i];
-        tmp[j++]=pop();
-       }
+        if (exp[i] == '+' || exp[i] == '-' || exp[i] == '*' || exp[i] == '/' || exp[i] == '^')
+            push(exp[i]);
+        else
+        {
+            tmp[j++] = exp[i];
+            tmp[j++] = pop();
+        }
     }
-    tmp[j]=exp[top--];
+    tmp[j] = exp[top--];
     strrev(tmp);
     puts(tmp);
 }
