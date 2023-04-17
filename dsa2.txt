@@ -1,0 +1,25 @@
+1) Difference between queue and stack:
+
+A) A queue is a collection of elements, often called "nodes", that supports two main operations:
+
+Enqueue: adding an element to the back of the queue.
+Dequeue: removing and returning the element at the front of the queue.
+This means that a queue follows a first-in, first-out (FIFO) ordering, like a line of people waiting for a bus.
+
+A stack, on the other hand, is also a collection of elements, but it supports two different operations:
+
+Push: adding an element to the top of the stack.
+Pop: removing and returning the element at the top of the stack.
+This means that a stack follows a last-in, first-out (LIFO) ordering, like a stack of plates.
+
+2) What do you understand about Enqueue and Dequeue? Give one computer based application of a Queue.
+
+A)Enqueue refers to the operation of adding an element to the back of the queue. When an element is enqueued, it becomes the last element in the queue.
+
+Dequeue refers to the operation of removing and returning the element at the front of the queue. When an element is dequeued, the next element in the queue becomes the new front element.
+
+A common computer-based application that uses a queue is a print spooler.
+
+When you print a document, the computer sends the print job to a print spooler, which places the job in a queue. The spooler then sends the job to the printer in the order it was received, allowing multiple print jobs to be queued and printed one after another.
+
+If the printer is busy with a previous job, the new print job is added to the end of the queue and waits until it is its turn to be printed. This helps ensure that print jobs are printed in the order they were received, following a first-in, first-out (FIFO) order.
