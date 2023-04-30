@@ -9,14 +9,17 @@ int isEmpty()
 {
     return top == -1;
 }
+
 int isFull()
 {
     return top == max - 1;
 }
+
 char peek()
 {
     return stk[top];
 }
+
 char pop()
 {
     if (isEmpty())
@@ -25,17 +28,20 @@ char pop()
     top--;
     return (ch);
 }
+
 void push(char oper)
 {
     if (isFull())
-        printf("Stack Full!!!!");
-
+    {
+        printf("Stack is Full!!");
+    }
     else
     {
         top++;
         stk[top] = oper;
     }
 }
+
 int checkIfOperand(char ch)
 {
     return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
@@ -60,35 +66,37 @@ int convertInfixToPostfix(char *exp)
     int i, j;
     for (i = 0, j = -1; exp[i]; ++i)
     {
-        if (checkIfOperand(exp[i]))//here we use the function to check whether the element in the loop is an alphabet
+        if (checkIfOperand(exp[i]))
             exp[++j] = exp[i];
-        else if (exp[i] == '(')//this is for opening bracket
+        else if (exp[i] == '(')
             push(exp[i]);
-        else if (exp[i] == ')')//this is for closing bracket where we pop off the previous operators till the previously opened bracket
+        else if (exp[i] == ')')
         {
-            while (!isEmpty() && peek() != '(')//this is for popping operators between brackets
+            while (!isEmpty() && peek() != '(')
                 exp[++j] = pop();
-            if (!isEmpty() && peek() != '(')//this return error
+            if (!isEmpty() && peek() != '(')
                 return -1;
             else
-                pop();//this pops off the brackets
+                pop();
         }
         else
         {
-            while (!isEmpty() && precedence(exp[i]) <= precedence(peek()))//this checks precedence of operators outside brackets and pops them when somethg with equal or less precedence cpmes off
+            while (!isEmpty() && precedence(exp[i]) <= precedence(peek()))
                 exp[++j] = pop();
             push(exp[i]);
         }
     }
-    while (!isEmpty())
-        exp[++j] = pop();
-    exp[++j] = '\0';
-    printf("%s", exp);
-}
+        while (!isEmpty())
+            exp[++j] = pop();
+        exp[++j] = '\0';
+        printf("%s", exp);
+    }
+
+
 int main()
 {
     char exp[19];
-    printf("Enter expression:\n");
+    printf("Enter the expression:\n");
     scanf("%s", &exp);
     convertInfixToPostfix(exp);
     return 0;

@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void addNode(int data);
-int countNodes();
-
-void display();
-
 struct node
 {
     int data;
@@ -31,14 +26,12 @@ void addNode(int data)
     {
 
         tail->next = newNode;
-
         tail = newNode;
     }
 }
 int countNodes()
 {
     int count = 0;
-
     struct node *current = head;
 
     while (current != NULL)
@@ -75,10 +68,6 @@ int main()
     int no_nodes, i = 0, ll_data;
     printf("Enter the number of nodes you want in the linked list: ");
     scanf("%d", &no_nodes);
-
-    // while loop to ask for data.
-    //  The while loop will be true as long as the loop counter is not equal to the no of nodes entered by the user
-
     while (i < no_nodes)
     {
         printf("Enter the data for Node %d: ", i + 1);

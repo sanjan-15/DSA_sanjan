@@ -35,5 +35,6 @@
   ],
   "C_Cpp_Runner.useAddressSanitizer": false,
   "C_Cpp.errorSquiggles": "enabled",
-  "markdown.validate.enabled": true
+  "markdown.validate.enabled": true,
+  "C_Cpp_Runner.showCompilationTime": false
 }
